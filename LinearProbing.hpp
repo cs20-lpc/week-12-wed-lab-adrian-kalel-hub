@@ -12,6 +12,8 @@ public:
     
     int probeIndex(const T& key, int i) const override {
         // TODO: Implement linear probing with skip
-        return 0;
+        return (this->hash1(key) + i * skip) % this->M;
+            //vsc ai suggestion
+
     }
 };

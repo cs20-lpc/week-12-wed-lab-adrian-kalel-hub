@@ -51,11 +51,23 @@ int main() {
             int keyPresent = keys[i];
             int keyAbsent = 1000 + i;
 
-            auto [found1, probes1] = tables[t]->search(keyPresent); // Students implement
+            //auto [found1, probes1] = tables[t]->search(keyPresent); 
+            // Students implement
+
+            pair<bool, int> result1 = tables[t]->search(keyPresent);
+            bool found1 = result1.first;
+            int probes1 = result1.second;
+            //replaced
+
             totalSearchProbes += probes1;
             if (found1) foundCount++;
 
-            auto [found2, probes2] = tables[t]->search(keyAbsent);
+            //auto [found2, probes2] = tables[t]->search(keyAbsent);
+            pair<bool, int> result2 = tables[t]->search(keyAbsent);
+            bool found2 = result2.first;
+            int probes2 = result2.second;
+            //replaced
+
             totalSearchProbes += probes2;
         }
         cout << "Search hits (first 10 present keys): " << foundCount << "/10\n";
